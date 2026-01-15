@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JP Vocab Data Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero__content">
+          <p class="hero__eyebrow" data-i18n="eyebrow">Open Vocab Registry</p>
+          <h1 class="hero__title" data-i18n="title">JP Vocab Data Library</h1>
+          <p class="hero__subtitle" data-i18n="subtitle">
+            Lightweight JSON packs for Japanese learners. Browse, filter, and share with a pull request.
+          </p>
+        </div>
+        <div class="hero__actions">
+          <div class="lang-switch">
+            <span data-i18n="langLabel">Language</span>
+            <button id="langToggle" class="pill" type="button">EN</button>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <span class="stat__label" data-i18n="statFiles">Files</span>
+              <span id="statFiles" class="stat__value">0</span>
+            </div>
+            <div class="stat">
+              <span class="stat__label" data-i18n="statItems">Items</span>
+              <span id="statItems" class="stat__value">0</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="controls card">
+          <div class="controls__row">
+            <label class="field">
+              <span data-i18n="searchLabel">Search</span>
+              <input id="searchInput" type="text" placeholder="Search by file or tag" data-i18n-placeholder="searchPlaceholder" />
+            </label>
+            <label class="field">
+              <span data-i18n="filterLabel">Filter by tag</span>
+              <select id="tagFilter"></select>
+            </label>
+          </div>
+          <div id="status" class="status"></div>
+        </section>
+
+        <section>
+          <div class="section-header">
+            <h2 data-i18n="libraryTitle">Data Library</h2>
+            <p data-i18n="librarySubtitle">Each card is a JSON file stored in /data.</p>
+          </div>
+          <div id="cardGrid" class="grid"></div>
+        </section>
+
+        <section class="card upload">
+          <div class="section-header">
+            <h2 data-i18n="uploadTitle">Upload / Share</h2>
+            <p data-i18n="uploadSubtitle">Validate a JSON file locally before you open a pull request.</p>
+          </div>
+          <div class="upload__body">
+            <input id="fileInput" type="file" accept=".json,application/json" />
+            <div id="uploadResult" class="upload__result"></div>
+          </div>
+        </section>
+
+        <section class="card howto">
+          <div class="section-header">
+            <h2 data-i18n="howTitle">How to use</h2>
+            <p data-i18n="howSubtitle">Copy a JSON link and plug it into your vocabulary app.</p>
+          </div>
+          <ol class="steps">
+            <li data-i18n="howStep1">Pick a dataset and download the JSON file.</li>
+            <li><span data-i18n="howStep2">Copy its link:</span> <code>/data/filename.json</code></li>
+            <li data-i18n="howStep3">Paste the link into your app and load the vocabulary list.</li>
+          </ol>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
